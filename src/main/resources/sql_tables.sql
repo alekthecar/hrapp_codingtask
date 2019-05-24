@@ -1,0 +1,25 @@
+CREATE TABLE job_candidates (
+    id BIGINT(20) NOT NULL AUTO_INCREMENT,
+    contact_number VARCHAR(255) DEFAULT NULL,
+    date_of_birth DATE DEFAULT NULL,
+    email VARCHAR(255) NOT NULL,
+    full_name VARCHAR(255) DEFAULT NULL,
+    PRIMARY KEY (`id`),
+    UNIQUE KEY (`email`)
+);
+
+CREATE TABLE skills (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    PRIMARY KEY (`id`),
+    UNIQUE KEY (`name`)
+);
+
+CREATE TABLE jobcandidate_skill (
+  skill_id int(11) NOT NULL,
+  jobcandidate_id bigint(20) NOT NULL,
+  KEY (`jobcandidate_id`),
+  KEY (`skill_id`),
+  CONSTRAINT FOREIGN KEY (`skill_id`) REFERENCES `skills` (`id`),
+  CONSTRAINT FOREIGN KEY (`jobcandidate_id`) REFERENCES `job_candidates` (`id`)
+);

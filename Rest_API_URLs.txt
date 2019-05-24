@@ -1,0 +1,53 @@
+--Create new skill--
+Method: POST
+Content-Type: application/json
+URL: http://localhost:8080/api/skills
+Body: {"name":"Java"}
+
+-------------------------------------------------------
+
+--Create new job candidate--
+Method: POST
+Content-Type: application/json
+URL: http://localhost:8080/api/jobCandidates
+Body: {"fullName":"Mikic,Aleksandar","dateOfBirth":[1972,11,4],"contactNumber":"+381641234567","email":"acamikic@gmail.ac.rs"}
+
+-------------------------------------------------------
+
+--Find job candidate by id--
+Method: GET
+Content-Type:
+URL: http://localhost:8080/api/jobCandidates/{id}
+Body:
+
+-------------------------------------------------------
+
+--Filter job candidates by name (optional) and/or list of skills (optional)--
+Method: GET
+Content-Type:
+URL: http://localhost:8080/api/jobCandidates?nameContains=someName&skills=skillName1&skills=skillName2
+Body:
+
+-------------------------------------------------------
+
+--Add new skill to job candidate--
+Method: PUT
+Content-Type:
+URL: http://localhost:8080/api/jobCandidates/{id}/addSkill?name=skillName
+Body:
+
+-------------------------------------------------------
+
+--Remove skill from job candidate's list of skills--
+Method: PUT
+Content-Type:
+URL: http://localhost:8080/api/jobCandidates/{id}/removeSkill?name=skillName
+Body:
+
+-------------------------------------------------------
+
+--Delete job candidate--
+Method: DELETE
+Content-Type:
+URL: http://localhost:8080/api/jobCandidates/{id}
+Body:
